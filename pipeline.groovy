@@ -13,7 +13,4 @@ def unit_test(){
 def sonar(){
 	sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=devops"
 }
-def build_jar(){
-	sh "mvn -f ./pom.xml clean package"
-}
 return this

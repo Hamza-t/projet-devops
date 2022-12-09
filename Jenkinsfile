@@ -5,45 +5,38 @@ def gv
 pipeline {
 	agent any
 	stages {
-		stage ('init') {
+		stage ('initialize') {
 			steps {
 				script{
 					gv = load "pipeline.groovy"
 				}
 			}
 		}
-		stage ('clone') {
+		stage ('clone_git') {
 			steps {
 				script{
 					gv.clonegit()
 				}
 			} 
 		}
-		stage ('clean') {
+		stage ('clean_mvn') {
 			steps {
 				script{
 					gv.mmvn_clean()
 				}
 			} 
 		}
-		stage ('unit tests') {
+		stage ('Unit testing') {
 			steps{
 				script{
 					gv.unit_test()
 				}
 			}
 		}
-		stage ('sonarqube') {
+		stage ('Sonar') {
 			steps{
 				script{
 					gv.sonar()
-				}
-			}
-		}
-		stage ('build jar') {
-			steps{
-				script{
-					gv.build_jar()
 				}
 			}
 		}
