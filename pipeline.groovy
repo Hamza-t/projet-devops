@@ -11,7 +11,7 @@ def runUnitTests(){
 	sh 'mvn test';
 }
 def sonarQubeTest(){
-	sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=devops123"
+	sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=devops"
 }
 def pushToNexus() {
     echo 'pushing to nexus...'
