@@ -15,21 +15,28 @@ pipeline {
 		stage ('clone') {
 			steps {
 				script{
-					gv.gitClone()
+					gv.clonegit()
+				}
+			} 
+		}
+		stage ('clean') {
+			steps {
+				script{
+					gv.mmvn_clean()
 				}
 			} 
 		}
 		stage ('unit tests') {
 			steps{
 				script{
-					gv.runUnitTests()
+					gv.unit_test()
 				}
 			}
 		}
 		stage ('sonarqube') {
 			steps{
 				script{
-					gv.sonarQubeTest()
+					gv.sonar()
 				}
 			}
 		}

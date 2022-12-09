@@ -1,16 +1,16 @@
-def gitClone(){
+def clonegit(){
 	echo "Getting Project from Git";
-	git 'https://github.com/khalil-yahyaoui/Project-Devops';
+	git 'https://github.com/Hamza-t/projet-devops';
 }
-def runMvnClean(){
+def mmvn_clean(){
 	echo "Maven Clean";
 	sh 'mvn clean';
 }
-def runUnitTests(){
+def unit_test(){
 	echo "Maven Test JUnit";
 	sh 'mvn test';
 }
-def sonarQubeTest(){
+def sonar(){
 	sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=devops"
 }
 return this
