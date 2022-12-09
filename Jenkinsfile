@@ -26,27 +26,6 @@ pipeline {
 				}
 			}
 		}
-		stage ('SonarQube Tests') {
-			steps{
-				script{
-					gv.sonarQubeTest()
-				}
-			}
-		}
-		stage ('Push to Nexus') {
-			steps{
-				script{
-					gv.pushToNexus()
-				}
-			}
-		}
-		stage ('Docker Image Build') {
-			steps{
-				script{
-					gv.dockerBuild()
-				}
-			}
-		}
 	}
 }
 
