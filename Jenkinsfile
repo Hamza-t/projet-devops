@@ -40,6 +40,13 @@ pipeline {
 				}
 			}
 		}
+		stage ('build jar') {
+			steps{
+				script{
+					gv.build_jar()
+				}
+			}
+		}
 	}
 }
 
